@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <style>
+       
+
+        * {
+
+            box-sizing: border-box;
+            font-family: Montserrat;
+          
+        }
+        body{
+            background-image: url(1.jpeg);
+            width: 98%;
+           height: 97.5vh;
+           background-repeat: no-repeat;
+           background-size: cover;
+           background-position: center;
+
+        
+        }
+
+        .main {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            background-image: url(8.png);
+            background-repeat: no-repeat;
+           background-color: rgba(126, 151, 178,.3);
+           box-shadow: 0 0 45px black;
+            padding: 6rem 4rem;
+            /* background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
+
+
+
+        }
+
+        .main1 {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            
+
+
+        }
+
+        #btn1 {
+            margin-top: 20px;
+            width: 90%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 60%;
+            font-weight: 500;
+            color: white;
+            padding: 11px 3rem;
+            font-size: 17px;
+            /* background-image: linear-gradient(to right, #e7499b, #f7797d, #efaa82, #e5d2ac, #edf0e5); */
+            background-image: linear-gradient(to right, #7e97b2, #667c95, #4e6379, #384a5e, #223344);
+        }
+
+        
+
+        #name1 {
+            margin-top: 30px;
+            width: 90%;
+            padding: 11px 4rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 17px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            /* background-image: linear-gradient(to right, #e7499b, #f7797d, #efaa82, #e5d2ac, #edf0e5); */
+            background-image: linear-gradient(to right, #7e97b2, #667c95, #4e6379, #384a5e, #223344);
+           
+        } 
+      
+
+        #btn2,#output1 {
+            display: block;
+            margin: auto;
+            margin-top: 30px;
+            width: 90%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 90%;
+            padding: 11px 4rem;
+            font-size: 17px;
+            /* background-image: linear-gradient(to right, #e7499b, #f7797d, #efaa82, #e5d2ac, #edf0e5); */
+            background-image: linear-gradient(to right, #7e97b2, #667c95, #4e6379, #384a5e, #223344);
+        }
+        #output1{
+            font-weight: 500;
+            display: none;
+            background-color: rgb(239, 239, 239);
+            /* background-image: linear-gradient(to right, #e7499b, #f7797d, #efaa82, #e5d2ac, #edf0e5); */
+            background-image: linear-gradient(to right, #7e97b2, #667c95, #4e6379, #384a5e, #223344);
+        }
+        .showname{
+           font-size: 50px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: white;
+            background-color: #778fa875;
+            box-shadow: 0 0 15px black;
+            padding: 15px;
+           
+        }
+        ::placeholder{
+            color: white;
+        }
+       
+       
+    </style>
+</head>
+
+<body>
+  
+        <div class="main">
+            <div>
+                <div class="main1">
+                    <h1 class="showname">Hello <span id="showname"></span></h1>
+                    <input type="text" id="name1" placeholder="Input Your Name" autocomplete="off">
+                    <button onclick="myfun()" id="btn1">Tell My Future</button>
+                    <h1 id="back" style="display: none;"></h1>
+                    <div id="chekbox" style="text-align: center;">
+                        <h4>Do you want to play</h4>
+                        <label for="">Yes</label>
+                        <input type="radio" name="check" id="yes" onclick="myfun2()">
+                        <label for="">No</label>
+                        <input type="radio" name="check" id="no" onclick="myfun2()">
+                    </div>
+                </div>
+                <div class="main1" id="second" style="display: none;">
+                    <select id="name1">
+                        <option value="Will I see clear without specs ?">Will I see clear <br> without specs ?</option>
+                        <option value="Will I get SUKOON in life anytime soon ?">Will I get SUKOON in life anytime soon ?
+                        </option>
+                        <option value="Will I get married ?">Will I get married ?</option>
+                        <option value="Will my laptop support RED Dead redumption ?">Will my laptop support RED redumption ?
+                        </option>
+                        <option value="Will I get married ?">Will I get married ?</option>
+                        <option value="Will I get promoted ?">Will I get promoted ?</option>
+                        <option value="If my foe lies within my circle ?">If my foe lies within my circle ?</option>
+                    </select>
+    
+                    <button onclick="myfun1()" id="btn2">Submit</button>
+                    <p id="output1" style="text-align: center;"></p>
+                </div>
+    
+    
+    
+            </div>
+        </div>
+
+  
+</body>
+<script>
+    function myfun() {
+        var myname = document.getElementById("name1").value;
+        document.getElementById("showname").innerHTML = ","+myname;
+
+    }
+
+    function myfun2() {
+        var myname = document.getElementById("name1").value;
+
+        if (myname != "") {
+            if (document.getElementById('yes').checked) {
+
+                document.getElementById('chekbox').style.display = "none"
+                document.getElementById('second').style.display = "block"
+                document.getElementById('name1').style.display = "none"
+                document.getElementById('btn1').style.display = "none"
+
+
+            }
+        }
+
+        if (document.getElementById('no').checked) {
+
+            document.getElementById('chekbox').style.display = "none"
+            document.getElementById('back').innerText = "Thanks for coming"
+            document.getElementById('back').style.display = "block"
+            document.getElementById('name1').style.display = "none"
+            document.getElementById('btn1').style.display = "none"
+        }
+
+    }
+
+    function myfun1() {
+        var a = ["It is certain", "It is decidedly so", "Reply hazy try again",
+            "Cannot predict now", "Do not count on it", "My sources say no",
+            "Outlook not so good", "Signs point to yes"];
+        var x = Math.floor(Math.random() * 8);
+        console.log(a[x])
+        document.getElementById("output1").style.display = "block";
+            document.getElementById("output1").innerHTML = a[x];
+
+      
+
+
+    }
+</script>
+
+</html>
