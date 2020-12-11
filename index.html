@@ -16,7 +16,7 @@
         }
 
         body {
-            background-image: url('1.jpeg');
+            background-image: url(1.jpeg);
             width: 98%;
             height: 97.5vh;
             background-repeat: no-repeat;
@@ -31,7 +31,7 @@
             top: 50%;
             transform: translate(-50%, -50%);
             position: absolute;
-            background-image: url('8.png');
+            background-image: url(8.png);
             background-repeat: no-repeat;
             background-color: rgba(126, 151, 178, .3);
             box-shadow: 0 0 45px black;
@@ -124,6 +124,17 @@
         ::placeholder {
             color: white;
         }
+        #buttn{
+           display: block;
+           margin: auto;
+           margin-top: 40px;
+           padding: 9px 30px;
+           font-size: 17px;
+           border-radius: 5px;
+           background-image: linear-gradient(to right, #7e97b2, #667c95, #4e6379, #384a5e, #223344);
+           font-weight: 500;
+           display: none;
+        }
     </style>
 </head>
 
@@ -157,9 +168,7 @@
                 <button onclick="myfun1()" id="btn2">Submit</button>
                 <p id="output1" style="text-align: center;"></p>
             </div>
-
-
-
+            <input type="button" value="EXIT" id="buttn" onclick="window.location.reload();">
         </div>
     </div>
 
@@ -168,14 +177,13 @@
         function myfun2() {
         var myname = document.getElementById("name1").value;
         document.getElementById("showname").innerHTML = "," + myname;
-
+        document.getElementById('buttn').style.display = "block"
         if (myname != "") {
             if (document.getElementById('yes').checked) {
-
                 document.getElementById('chekbox').style.display = "none"
                 document.getElementById('second').style.display = "block"
                 document.getElementById('name1').style.display = "none"
-
+              
             }
         }
 
@@ -187,6 +195,7 @@
             document.getElementById('name1').style.display = "none"
 
         }
+       
 
     }
 var z;
@@ -206,6 +215,7 @@ var z;
 
 
     document.getElementById("btn2").style.display = "none";
+   
 
     // for disabling the selected items
     var mainSelect = document.getElementsByName("teamnaam");
@@ -224,6 +234,11 @@ var z;
         document.getElementById("btn2").style.display = "block";
         document.getElementById("output1").style.display = "none";
     }
+
+    function reload1(){
+        window.reload();
+    }
+
     </script>
 </body>
 
